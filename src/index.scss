@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 /* variables */
-  $heading-color: #444;
-  $text-color: #999;
-  $primary-color: #8d69f1;
-  $highlight-color: #d13267;
-  $bg-color: #f4f4f4;
+$heading-color: #444;
+$text-color: #999;
+$primary-color: #8d69f1;
+$highlight-color: #d13267;
+$bg-color: #f4f4f4;
 
 /* base styles */
 body {
@@ -13,7 +13,13 @@ body {
   margin: 0;
   font-size: 1.1em;
   background: $bg-color;
-  ul, li, p, h1, h2, h3, h4 {
+  ul,
+  li,
+  p,
+  h1,
+  h2,
+  h3,
+  h4 {
     margin: 0;
     padding: 0;
   }
@@ -21,7 +27,6 @@ body {
     list-style-type: none;
   }
 }
-
 
 /* layout */
 .page-title {
@@ -38,10 +43,10 @@ body {
   cursor: pointer;
   font-size: 1em;
   border: 1px solid $primary-color;
-    &:hover{
-      color: #fff;
-      background-color: $primary-color;
-    }
+  &:hover {
+    color: #fff;
+    background-color: $primary-color;
+  }
 }
 
 /* forms */
@@ -54,7 +59,8 @@ label {
   }
 }
 
-input, textarea {
+input,
+textarea {
   padding: 8px 6px;
   font-size: 1em;
   color: #777;
@@ -69,6 +75,8 @@ textarea {
 .error {
   color: red;
   background: pink;
+  width: 100%;
+  text-align: center;
   border: 1px solid red;
   border-radius: 4px;
   padding: 8px;

@@ -7,6 +7,7 @@ export default function Signup() {
     const [password, setPassword] = useState('');
     const [displayName, setDisplayName] = useState('');
     const [userImage, setuserImage ] = useState(null);
+    const [userImageErr, setuserImageErr ] = useState(null);
 
     const { signup, isPending, error } = useSignup();
 
@@ -14,6 +15,28 @@ export default function Signup() {
         e.preventDefault();
         signup(email, password, displayName, userImage);
       };
+
+    const handleFileChange = (e) => {
+        setuserImage(null)
+        let chosen = e.target.files[0];
+
+        if(!chosen){
+            setuserImageErr('Please select a file!')
+            return;
+        }
+
+        if(!chosen.type.includes('image')){
+            setuserImageErr('Please select an image file!')
+            return;
+        }
+
+        if(chosen.size > 100000){
+            setuserImageErr('Image file size must be less than 100kb')
+            return;
+        }
+        setuserImageErr(null);
+        setuserImage(chosen);
+    }
     
 
     return (
@@ -23,6 +46,7 @@ export default function Signup() {
         <span>Email:</span>
       </label>
       <input
+        required
         type="email"
         onChange={(e) => setEmail(e.target.value)}
         value={email}
@@ -31,6 +55,7 @@ export default function Signup() {
         <span>Username:</span>
       </label>
       <input
+        required
         type="text"
         onChange={(e) => setDisplayName(e.target.value)}
         value={displayName}
@@ -39,6 +64,7 @@ export default function Signup() {
         <span>Password:</span>
       </label>
       <input
+        required
         type="password"
         onChange={(e) => setPassword(e.target.value)}
         value={password}
@@ -47,9 +73,11 @@ export default function Signup() {
         <span>User thumbnail:</span>
       </label>
       <input
+        required
         type="file"
-        value={userImage}
+        onChange={handleFileChange}
       />
+      {userImageErr && <div className='error'>{userImageErr}</div>}
       {!isPending && <button className="btn">Sign up</button>}
       {isPending && (<button className="btn" disabled>Loading...</button>)}
       {error && <p>{error}</p>}
