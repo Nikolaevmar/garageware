@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { fireauth } from "../firebase/config";
+import { fireauth,firestore } from "../firebase/config";
 import { useAuthContext } from "./useAuthContext";
 
 export const useLogin = () => {
@@ -16,10 +16,13 @@ export const useLogin = () => {
       const response = await fireauth.signInWithEmailAndPassword(email, password);
       dispatch({ type: "LOG_IN", payload: response.user });
 
+      await firestore.collection('users').doc(response.user.uid).update({online: true})
+
       if (!isCancelled) {
         setIsPending(false);
         setError(null);
       }
+
     } catch (err) {
       if (!isCancelled) {
         setError(err.message);
