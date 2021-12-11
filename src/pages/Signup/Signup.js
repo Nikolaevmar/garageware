@@ -79,7 +79,7 @@ export default function Signup() {
       {userImageErr && <div className='error'>{userImageErr}</div>}
       {!isPending && <button className="btn">Sign up</button>}
       {isPending && (<button className="btn" disabled>Loading...</button>)}
-      {error && <p>{error}</p>}
+      {error && <div className='error'>{error}</div>}
     </form>
     )
 }

@@ -11,6 +11,7 @@ import Login from "./pages/Login/Login";
 import Signup from "./pages/Signup/Signup";
 import Navbar from './components/Navbar'
 import Sidebar from "./components/Sidebar";
+import OnlineUsers from "./components/OnlineUsers";
 
 import { useAuthContext } from "./hooks/useAuthContext";
 
@@ -32,6 +33,7 @@ function App() {
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
           </div>
+          {user && <OnlineUsers/>}
         </BrowserRouter>}
     </div>
   );
