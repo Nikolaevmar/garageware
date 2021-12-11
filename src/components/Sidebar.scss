@@ -1,4 +1,4 @@
-$primary-color: #8d69f1;
+$primary-color: #6593f5;
 $bg-color: #f4f4f4;
 
 .sidebar {
@@ -40,7 +40,7 @@ $bg-color: #f4f4f4;
     }
     a.active {
       color: #555;
-      border-radius: 8px;
+      border-radius: 20px 0 0 20px;
       background: $bg-color;
       img {
         filter: invert(40%);
