@@ -8,7 +8,6 @@ export default function Signup() {
     const [displayName, setDisplayName] = useState('');
     const [userImage, setuserImage ] = useState(null);
     const [userImageErr, setuserImageErr ] = useState(null);
-
     const { signup, isPending, error } = useSignup();
 
     const handleSubmit = (e) => {
@@ -41,7 +40,7 @@ export default function Signup() {
 
     return (
         <form onSubmit={handleSubmit} className='signForm'>
-      <h2>Sign up</h2>
+      <h2 className='signTag'>Sign up</h2>
       <label>
         <span>Email:</span>
       </label>
