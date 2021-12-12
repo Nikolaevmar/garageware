@@ -1,6 +1,6 @@
 import { useReducer, useEffect, useState } from "react";
-
 import { firestore, timestamp } from "../firebase/config";
+
 let initialState = {
   document: null,
   isPending: false,
@@ -39,7 +39,7 @@ const firestoreReducer = (state, action) => {
 };
 
 export const useFirestore = (collection) => {
-  const [state, dispatch] = useReducer(firestoreReducer, initialState);
+  const [response, dispatch] = useReducer(firestoreReducer, initialState);
   const [isCancelled, setIsCancelled] = useState(false);
 
   const ref = firestore.collection(collection);
@@ -80,5 +80,5 @@ export const useFirestore = (collection) => {
   useEffect(() => {
     return () => setIsCancelled(true);
   }, []);
-  return { addDocument, deleteDocument, state };
+  return { addDocument, deleteDocument, response };
 };
