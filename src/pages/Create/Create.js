@@ -41,7 +41,7 @@ export default function Create() {
             return
         }
         
-        const assingedUsersList = assignedPeople.map((user) => {
+        const assignedUsersList = assignedPeople.map((user) => {
             return {
                 displayName: user.value.displayName,
                 photoURL: user.value.photoURL,
@@ -64,7 +64,7 @@ export default function Create() {
             dueDate: timestamp.fromDate(new Date(dueDate)),
             comments: [],
             createdBy,
-            assingedUsersList
+            assignedUsersList
         }
         await addDocument(project);
         if(!response.error){
