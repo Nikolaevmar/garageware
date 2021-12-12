@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import {useCollection} from '../../hooks/useCollection'
+import {useEffect} from 'react'
 import Select from 'react-select'
 import './Create.scss'
 
@@ -16,10 +18,22 @@ export default function Create() {
         {value: 'cosmetic', label: 'Cosmetic'}
     ]
 
+    const { documents } = useCollection('users')
+    const [users, setUsers] = useState([]);
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(name, details,dueDate);
+        console.log(name, details, dueDate, category.value, assignedPeople);
     }
+
+    useEffect(() => {
+        if(documents){
+            const options = documents.map(user => {
+                return {value:user, label: user.displayName}
+            })
+            setUsers(options);
+        }
+    }, [documents])
 
     return (
         <div className='create-form'>
@@ -61,6 +75,11 @@ export default function Create() {
                  </label>
                  <label>
                      <span>Assign to</span>
+                     <Select 
+                     onChange={(option) => setAssignedPeople(option)}
+                     options={users}
+                     isMulti
+                     />
                     </label>
                  
                  <button className='btn'>Submit</button>
