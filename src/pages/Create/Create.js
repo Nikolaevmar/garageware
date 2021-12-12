@@ -11,6 +11,7 @@ export default function Create() {
     const [dueDate, setDuedate] = useState('')
     const [category, setCategory] = useState('')
     const [assignedPeople, setAssignedPeople] = useState([]);
+    const [formError, setFormError] = useState(null)
 
     const categories = [
         {value: 'performance', label: 'Performance'},
@@ -23,6 +24,16 @@ export default function Create() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setFormError(null);
+        if(!category){
+            setFormError('Please select a category')
+            return
+        }
+        if(assignedPeople.length < 1){
+            setFormError('Please assign at least one person')
+            return
+        }
+
         console.log(name, details, dueDate, category.value, assignedPeople);
     }
 
@@ -83,6 +94,7 @@ export default function Create() {
                     </label>
                  
                  <button className='btn'>Submit</button>
+                 {formError && <div className='error'>{formError}</div>}
             </form>
         </div>
     )
