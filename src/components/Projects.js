@@ -10,6 +10,7 @@ export default function Projects({ projects }) {
             {projects.map((p) => (
                 <Link to={`/details/${p.id}`} key={p.id}>
                     <h4>{p.name}</h4>
+                    <p>Category {'>'} {p.category}</p>
                     <p>Due by {p.dueDate.toDate().toDateString()}</p>
                     <div className='assigned-to'>
                        <ul>
