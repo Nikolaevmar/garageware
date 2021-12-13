@@ -1,7 +1,9 @@
 import { useDocument } from '../../hooks/useDocument'
 import { useParams } from 'react-router'
+import DetailsSummary from './DetailsSummary';
 
 import './Details.scss'
+
 
 export default function Details() {
 
@@ -18,7 +20,7 @@ export default function Details() {
 
     return (
         <div className='project-details'>
-            <h2>{document.name}</h2>
+            <DetailsSummary project={document}/>
         </div>
     )
 }
