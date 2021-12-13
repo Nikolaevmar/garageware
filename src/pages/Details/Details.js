@@ -23,7 +23,7 @@ export default function Details() {
     return (
         <div className='project-details'>
             <DetailsSummary project={document}/>
-            <DetailsComments/>
+            <DetailsComments project={document}/>
         </div>
     )
 }
