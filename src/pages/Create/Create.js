@@ -101,6 +101,14 @@ export default function Create() {
                      options={categories}
                      />
                     </label>
+                    <label>
+                     <span>Assign to</span>
+                     <Select 
+                     onChange={(option) => setAssignedPeople(option)}
+                     options={users}
+                     isMulti
+                     />
+                    </label> 
                 <label>
                  <span>Project details:</span>
                  <textarea
@@ -119,14 +127,6 @@ export default function Create() {
                  value={dueDate}
                  />
                  </label>
-                 <label>
-                     <span>Assign to</span>
-                     <Select 
-                     onChange={(option) => setAssignedPeople(option)}
-                     options={users}
-                     isMulti
-                     />
-                    </label> 
                  <button className='btn'>Submit</button>
                  {formError && <div className='error'>{formError}</div>}
             </form>
