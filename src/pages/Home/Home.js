@@ -1,5 +1,8 @@
 import './Home.scss'
 import project from '../../assets/project.png'
+import facebook from '../../assets/facebook.png'
+import github from '../../assets/github.png'
+import instagram from '../../assets/instagram.png'
 import { Link } from 'react-router-dom'
 
 export default function Home() {
@@ -20,6 +23,11 @@ export default function Home() {
                     <img src={project} className='logo' alt='garage-pic'/>
                 </div>
             </div>
+            <footer className='footer'>
+                 <a href="https://github.com/Nikolaevmar" target="_blank" rel="noreferrer noopener"><img src={github} className='icon' alt='icon'/></a>
+                 <a href="https://www.facebook.com/profile.php?id=100015561824883" target="_blank" rel="noreferrer noopener"><img src={facebook} className='icon' alt='icon' /></a>
+                 <a href="https://www.instagram.com/nikolaevvw/" target="_blank" rel="noreferrer noopener"><img src={instagram} className='icon' alt='icon'/></a>
+             </footer>
         </div>
     )
 }

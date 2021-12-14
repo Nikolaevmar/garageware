@@ -2,10 +2,11 @@ $heading-color: #444;
 $text-color: #999;
 
 .project-list {
-  margin-top: 40px;
+  margin: 40px 0 40px 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   grid-gap: 20px;
+
   a {
     background-color: #fff;
     padding: 16px;
