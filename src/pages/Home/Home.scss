@@ -1,0 +1,19 @@
+.showcase-area {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+  justify-content: center;
+  .logo {
+    width: 580px;
+    height: 400px;
+  }
+  .big-title {
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+  .text {
+    font-size: 1rem;
+    margin: 1.9rem 0 2.5rem;
+    max-width: 600px;
+  }
+}
