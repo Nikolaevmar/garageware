@@ -20,6 +20,9 @@ export default function Home() {
                     <img src={project} className='logo' alt='garage-pic'/>
                 </div>
             </div>
+            <footer>
+                <p>&reg; garageware2021</p>
+            </footer>
             </div>
     )
 }
