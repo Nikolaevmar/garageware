@@ -10,6 +10,7 @@ $heading-color: #444;
     margin: 0 auto;
     align-items: center;
     justify-content: flex-end;
+    padding: 0 60px;
   }
   .logo {
     font-weight: bold;
@@ -29,5 +30,14 @@ $heading-color: #444;
     color: #333;
     text-decoration: none;
     margin-right: 25px;
+  }
+  .icons {
+    width: 100%;
+    margin-right: auto;
+  }
+  .icon {
+    width: 28px;
+    height: 28px;
+    margin-right: auto;
   }
 }
