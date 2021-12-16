@@ -1,10 +1,7 @@
-$primary-color: #6593f5;
-$bg-color: #f4f4f4;
-
 .sidebar {
   width: 280px;
   min-width: 280px;
-  background: $primary-color;
+  background: var(--primary-color);
   min-height: 100vh;
   box-sizing: border-box;
   position: relative;
@@ -41,7 +38,7 @@ $bg-color: #f4f4f4;
     a.active {
       color: #555;
       border-radius: 20px 0 0 20px;
-      background: $bg-color;
+      background: var(--bg-color);
       img {
         filter: invert(40%);
       }

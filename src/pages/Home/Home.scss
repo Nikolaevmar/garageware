@@ -30,3 +30,9 @@
     }
   }
 }
+
+@media screen and (max-width: 860px) {
+  .showcase-area {
+    flex-direction: column;
+  }
+}

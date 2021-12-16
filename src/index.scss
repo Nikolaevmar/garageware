@@ -5,8 +5,17 @@
   --heading-color: #444;
   --text-color: #999;
   --primary-color: #6593f5;
+  --highlight-color: #d13267;
+  --bg-color: #f4f4f4;
 }
 
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+}
 /* base styles */
 body {
   font-family: Poppins, sans-serif;
