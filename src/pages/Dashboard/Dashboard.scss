@@ -1,6 +1,3 @@
-$text-color: #999;
-$primary-color: #6593f5;
-
 .dashboard {
   padding: 0 60px;
 }
@@ -22,7 +19,7 @@ $primary-color: #6593f5;
     border: 0;
     font-family: inherit;
     font-weight: bold;
-    color: $text-color;
+    color: var(--text-color);
     cursor: pointer;
     border-right: 1px solid #e4e4e4;
     font-size: 0.9em;
@@ -31,6 +28,6 @@ $primary-color: #6593f5;
     border: 0;
   }
   button.active {
-    color: $primary-color;
+    color: var(--primary-color);
   }
 }
