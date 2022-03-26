@@ -1,4 +1,3 @@
-![image](https://user-images.githubusercontent.com/77740117/146347997-febd5c63-1c34-4f73-a4d7-f0f88b675c0b.png)
 # Getting Started with Create React App
 
 Host: https://garagemanagement-53cbf.web.app/
