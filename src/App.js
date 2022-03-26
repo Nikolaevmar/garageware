@@ -6,7 +6,6 @@ import './App.scss';
 import Create from "./pages/Create/Create";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Details from "./pages/Details/Details";
-import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import Signup from "./pages/Signup/Signup";
 import Navbar from './components/Navbar'
@@ -25,7 +24,7 @@ function App() {
           <div className='container'>
             <Navbar/>
           <Routes>
-            <Route path="/" element={(user && <Navigate to='/dashboard'/>) || (!user && <Home />)} />
+            <Route path="/" element={(user && <Navigate to='/dashboard'/>) || (!user && <Navigate to="/login"/>)} />
             <Route path="/dashboard" element={(user && <Dashboard/>) || (!user && <Navigate to="/login"/>)} />
             <Route path="/create" element={(user && <Create/>) || (!user && <Login />)} />
             <Route path="/details/:id" element={(user && <Details/>) || (!user && <Login />)} />
