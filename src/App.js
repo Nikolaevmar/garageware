@@ -1,19 +1,17 @@
-//Router
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
-//Styles
+import React, { lazy, Suspense } from "react";
 import './App.scss';
-//Pages and components
-import Create from "./pages/Create/Create";
-import Dashboard from "./pages/Dashboard/Dashboard";
-import Details from "./pages/Details/Details";
-import Login from "./pages/Login/Login";
-import Signup from "./pages/Signup/Signup";
-import Navbar from './components/Navbar'
+import { useAuthContext } from "./hooks/useAuthContext";
+
 import Sidebar from "./components/Sidebar";
 import OnlineUsers from "./components/OnlineUsers";
+import Navbar from "./components/Navbar";
 
-
-import { useAuthContext } from "./hooks/useAuthContext";
+const Dashboard = lazy(() => import("./pages/Dashboard/Dashboard"));
+const Create = lazy(() => import("./pages/Create/Create"));
+const Details = lazy(() => import("./pages/Details/Details"))
+const Login = lazy(() => import("./pages/Login/Login"));
+const Signup = lazy(() => import("./pages/Signup/Signup"))
 
 function App() {
   const {user, authIsReady} = useAuthContext();
@@ -23,6 +21,7 @@ function App() {
         {user && <Sidebar />}
           <div className='container'>
             <Navbar/>
+            <Suspense fallback={<div className="loader"></div>}>
           <Routes>
             <Route path="/" element={(user && <Navigate to='/dashboard'/>) || (!user && <Navigate to="/login"/>)} />
             <Route path="/dashboard" element={(user && <Dashboard/>) || (!user && <Navigate to="/login"/>)} />
@@ -32,6 +31,7 @@ function App() {
             <Route path="/signup" element={(user && <Navigate to='/dashboard'/>) || (!user && <Signup />)} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
+          </Suspense>
           </div>
           {user && <OnlineUsers/>}
         </BrowserRouter>}
