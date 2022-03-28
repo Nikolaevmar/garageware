@@ -15,7 +15,7 @@ export default function Navbar() {
             <ul>
                 <li className='logo'>
                     <img src={wrenchIcon} className='logo' alt='wrench logo'/>
-                    <Link to="/"><span>GarageWare</span></Link>
+                    <Link to="/"><span>Garageware</span></Link>
                 </li>
                 <li>{!user && <Link to="/login">Login</Link>}</li>
                 <li>{!user && <Link to="/signup">Signup</Link>}</li>

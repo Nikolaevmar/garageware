@@ -1,5 +1,11 @@
 .create-form {
   padding: 0 60px;
-  max-width: 800px;
+  margin: auto;
+  max-width: 750px;
   align-items: center;
+}
+
+.create-form button{
+  margin-bottom: 1em;
+  width: 100%;
 }
